@@ -1,0 +1,156 @@
+@font-face {
+    font-family: Josefin;
+    src: url("JosefinSans-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: Siruca;
+    src: url("siruca-regular.ttf");
+}
+
+@font-face {
+    font-family: Saveloy;
+    src: url("Saveloy.ttf");
+}
+
+/* add variables */
+:root {
+    --unit: 12px;
+    --fontSize: 18px;
+    --leading: 21px;
+}
+
+
+* {
+    padding: var(--unit);
+    /* border: 2px solid rgb(0, 0, 0); */
+    filter: blur(3px);
+
+    transition-property: filter;
+    transition-duration: 0.9s;
+    transition-timing-function: ease-in-out;
+}
+
+*:hover {
+     filter: blur(0.2px);
+}
+
+body {
+    margin: auto;
+    background-color: rgb(225, 223, 212);
+    width: 1200px;  
+    /* what if different computers have different sizes? how do we adapt to that? */
+
+    font-family: Josefin;
+}
+
+.content {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.content > {
+    margin: 0 var(--unit);
+} 
+
+h1 {
+    margin: var(--unit) 0;
+    /* why isn't this aligning top unless i specify, even tho it's a direct child of content? */
+    
+    font-family: Saveloy;
+    font-size: calc(14 * var(--unit));
+    line-height: calc(12 * var(--unit));
+    letter-spacing: 0.035em;
+    /* is there a way to optical align/make the left side look less ragged? */
+    color:rgb(212, 182, 182);
+}
+
+
+.content .vertLine {
+    align-self: stretch; /* stretch to bottom of div*/
+    margin: var(--unit);
+    padding: 0;
+    border: 0.5px solid rgb(0, 0, 0);
+}
+
+.text {
+    view-transition-name: text;
+}
+
+p {
+    font-size: var(--fontSize);
+    color: rgb(153, 140, 150);
+    line-height: var(--leading);
+}
+
+a {
+    display: inline;
+    color:rgb(188, 124, 160);
+    padding: 0;
+}
+
+strong {
+    display: block;
+    font-size: calc(var(--fontSize)*2);
+    color:rgb(184, 107, 126);
+    line-height: calc(var(--leading)*2);
+    text-align: center;
+}
+
+blockquote {
+    color:rgb(194, 160, 160);
+    font-family: Siruca;
+}
+
+footer {    
+    text-align: right;
+}
+
+.btn {
+    /* transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.05s; */
+
+    transition: transform 0.3s ease-in-out 0.05s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+@view-transition {
+    navigation: auto;
+}
+
+/* slide transition between pages */
+
+::view-transition-group(text) {
+    animation-duration: 2s;
+    animation-timing-function: ease;
+}
+
+::view-transition-old(text) {
+    animation-name: slide-out;
+}
+
+::view-transition-new(text) {
+    animation-name: slide-in;
+}
+
+@keyframes slide-out {
+    to {
+        translate: 0 -150vh;
+        opacity: 0;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        translate: 0 100vh;
+        opacity: 100;
+    }
+}
