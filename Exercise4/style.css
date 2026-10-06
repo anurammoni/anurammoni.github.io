@@ -1,0 +1,209 @@
+:root {
+    --unit: 350px;
+    --pxl: 15px;
+}
+
+::-webkit-scrollbar {
+    width: 12em;
+    height: 12em
+}
+
+
+
+body {
+    background-color: rgb(252, 252, 246);
+    padding: 5% auto;
+}
+
+div {
+    /* border: solid 2px black; */
+}
+
+.grid {
+    width: calc(3 * var(--unit));
+    place-items: center;
+    place-content: center;
+    display: grid;
+    grid-template-columns: var(--unit) var(--unit); /* Two columns, each 50% */
+    grid-template-rows: auto auto; /* Two rows */
+}
+
+.gridInner {
+    width: var(--unit);
+    height: var(--unit);
+}
+
+.scroll {
+    scrollbar-color: #2d08cf #2f00ff;
+    scrollbar-width: 50em;
+    width: var(--unit);
+    height: var(--unit);
+    overflow: scroll;
+}
+
+.dLeft{
+  box-shadow: 5px 5px 0 20px rgb(42, 139, 172);
+  border-radius: 50px;    border-radius: 10px;
+    margin: -105px 0 auto 90px;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border: 2px solid black;
+
+}
+
+.dRight {
+    border-radius: 10px;
+    background-color: rgb(42, 139, 172);
+    margin: 4px auto auto 180px;
+    border: 2px solid black;
+    width: 20px;
+    height: 220px;
+}
+
+.dDot {
+    border-radius: 20px;
+    background-color: rgb(42, 139, 172);
+    margin: 15px auto auto 180px;
+    /* position: absolute; */
+    width: 40px;
+    height: 10px;
+    border: 2px solid black;
+}
+
+
+
+.pixelD {
+    display: grid;        
+    /* border: 1px solid black; */
+    width: calc(12 * var(--pxl));
+    height: calc(12 * var(--pxl));
+
+    grid-template-columns: repeat(12, var(--pxl));
+    grid-template-rows: repeat(12, var(--pxl));
+    margin: 10% 10% 50%;
+    transform: skewX(-10deg);
+}
+
+.pixelD * {
+    /* border: 1px solid black; */
+}
+
+.dPxl {
+      box-shadow: 10px 0px 0 0px rgb(42, 139, 172);
+
+    box-sizing: border-box; /* Forces border inside */
+    /* width: var(--pxl);
+    height: var(--pxl); */
+    background-color: rgb(150, 204, 172);
+}
+
+.dPxl:nth-child(1) {
+    grid-column: 10; 
+    grid-row: 2 / 12;
+}
+.dPxl:nth-child(2) {
+    grid-column: 10; 
+    grid-row: 12;
+}
+.dPxl:nth-child(3) {
+    grid-column: 6/7; 
+    grid-row: 9;
+}
+.dPxl:nth-child(4) {
+    grid-column: 12; 
+    grid-row: 12;
+}
+.dPxl:nth-child(5) {
+    grid-column: 6/10; 
+    grid-row: 12;
+}
+.dPxl:nth-child(6) {
+    grid-column: 6; 
+    grid-row: 10 / 12;
+}
+.dPxl:nth-child(7) {
+    grid-column: 7/10; 
+    grid-row: 8;
+}
+
+.dBowl {
+        box-sizing: border-box; /* Forces border inside */
+
+    margin: 120px 90px;
+    border-radius: 100px 30px 70px 70px ;
+    border-top: 5px solid;
+    border-bottom: 10px solid;
+    border-right: 20px solid;
+    border-left: 30px solid;
+    border-color: rgb(96, 88, 162);
+    width: 90px;
+    height: 90px;
+    transform: skewX(-10deg);
+
+}
+
+.dAsc {
+    box-sizing: border-box; /* Forces border inside */
+
+    margin: -320px 180px;
+    border-radius: 100px 50px 70px 70px ;
+    transform: skewX(-10deg);
+
+    border-left: 20px solid rgb(96, 88, 162);
+    width: 60px;
+    height: 200px;
+}
+
+.dGeo {
+    margin: 90px 0 180px;
+    transform: scaleX(0.85);
+}
+
+.dPac {
+    margin: 90px 90px;
+
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-right: 60px solid transparent;
+    border-top: 60px solid;
+    border-left: 60px solid rgb(38, 72, 165);
+    border-bottom: 60px solid rgb(0, 0, 0);
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 6px;
+}
+
+.dSlice {
+    margin: -200px 160px 120px;
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid rgb(157, 205, 214);
+    border-left: 50px solid transparent;
+    
+}
+
+.dSlice2 {
+    margin: -120px 160px 120px;
+    width: 0;
+    height: 0;
+    border-top: 50px solid rgb(175, 75, 75);
+    border-left: 50px solid transparent; 
+}
+
+.dBar {
+    margin: -340px 218px 120px;
+    width: 0;
+    height: 0;
+    border-top: 210px solid rgb(0, 0, 0);
+    border-right: 20px solid transparent; 
+}
+.dBar2 {
+    margin: -310px 221px 120px;
+    width: 0;
+    height: 0;
+    border-bottom: 210px solid rgb(38, 72, 165);
+    border-left: 20px solid transparent; 
+}

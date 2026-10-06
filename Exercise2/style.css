@@ -38,9 +38,9 @@
 body {
     margin: auto;
     background-color: rgb(225, 223, 212);
-    width: 1200px;  
+    width: 1200px; /* use %  */
     /* what if different computers have different sizes? how do we adapt to that? */
-
+    /* use em to create responsive text width paragrpahs */
     font-family: Josefin;
 }
 

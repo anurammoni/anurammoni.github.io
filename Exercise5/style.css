@@ -1,0 +1,119 @@
+:root {
+    --unit: 350px;
+    --pxl: 15px;
+}
+
+
+body {
+    background-color: rgb(13, 9, 54);
+    margin: auto;
+}
+
+.pixelD {
+    display: grid; 
+    /* border: 1px solid black; */
+    width: calc(24 * var(--pxl));
+    height: calc(24 * var(--pxl));
+
+    grid-template-columns: repeat(12, var(--pxl));
+    grid-template-rows: repeat(12, var(--pxl));
+    margin: 20% auto;
+    transform: skewX(-10deg);
+}
+
+.pixelD * {
+    /* border: 1px solid black; */
+}
+
+.pixelD:hover {
+    animation: grid-animate 3s ease-in-out infinite;
+}
+
+.dPxl {
+      box-shadow: 10px 0px 0 0px rgb(42, 139, 172);
+
+    box-sizing: border-box; /* Forces border inside */
+    background-color: rgb(150, 204, 172);
+    
+}
+
+.pixelD:hover > .dPxl {
+    animation: grid-color 3s ease infinite;
+}
+
+
+/* ascender */
+.dPxl:nth-child(1) {
+    grid-column: 10; 
+    grid-row: 2 / 13;
+}
+
+
+/* dot */
+.dPxl:nth-child(4) {
+    grid-column: 12; 
+    grid-row: 12;
+}
+
+/* bowl-bottom */
+.dPxl:nth-child(5) {
+    grid-column: 6/10; 
+    grid-row: 12;
+}
+
+/* bowl-left */
+.dPxl:nth-child(3) {
+    grid-column: 6; 
+    grid-row: 9 / 12;
+}
+
+/* bowl-top */
+.dPxl:nth-child(2) {
+    grid-column: 7/10; 
+    grid-row: 8;
+}
+
+@keyframes grid-animate {
+   0% {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 4fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 4fr 1fr 1fr;
+    }
+
+   25% {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr 2fr 1fr 1fr;
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 1fr 1fr 1fr 1fr 1fr 4fr 1fr 0.1fr;
+   }
+
+   50% {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 4fr 1fr 1fr 1fr 1fr 1fr 1fr;
+   }
+
+    75% {
+        grid-template-columns: 1fr 1fr 0.1fr 0.4fr 0.1fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr;
+        grid-template-rows: 3fr 3fr 2fr 2fr 1fr 5fr 1fr 1fr 1fr 4fr 3fr 6fr;
+   }
+
+    100% {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 4fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 4fr 1fr 1fr;
+    }
+
+}
+
+@keyframes grid-color {
+    0% {
+        background-color: rgb(150, 204, 172);
+    }
+    25% {
+        background-color: rgb(241, 243, 110);
+    }
+    50% {
+        background-color: rgb(239, 144, 171);
+    }
+    75% {
+        background-color: rgb(147, 172, 255);
+    }
+    100% {
+        background-color: rgb(150, 204, 172);
+    }
+}
